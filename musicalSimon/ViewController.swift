@@ -7,18 +7,41 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    
+    @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet var soundButton: [UIButton]!
+    @IBOutlet weak var levelLabel: UILabel!
+    
+    var sound1Player:AVAudioPlayer!
+    var sound2Player:AVAudioPlayer!
+    var sound3Player:AVAudioPlayer!
+    var sound4Player:AVAudioPlayer!
+    
+    var playlist = [Int]()
+    var currentItem = 0
+    var numberOfTaps = 0
+    var readyForUser = false
+    
+    var level = 1
+    
+     override var preferredStatusBarStyle: UIStatusBarStyle {
         return.lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupAudioFiles()
+        
     }
 
+    func setupAudioFiles() {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
