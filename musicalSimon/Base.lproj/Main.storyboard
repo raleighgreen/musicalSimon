@@ -52,6 +52,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-h3-iWu">
                                 <rect key="frame" x="143" y="289" width="88" height="88"/>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2c-pL-Krh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT5-oO-1sb">
                                 <rect key="frame" x="155.5" y="69" width="64.5" height="25.5"/>
@@ -80,6 +83,9 @@
                         <outlet property="levelLabel" destination="ZT5-oO-1sb" id="GvG-7p-p3h"/>
                         <outlet property="startGameButton" destination="eaz-h3-iWu" id="MUh-sN-22H"/>
                         <outletCollection property="soundButton" destination="kHc-cZ-Ogc" collectionClass="NSMutableArray" id="Xoj-z2-Su6"/>
+                        <outletCollection property="soundButton" destination="Lk6-3g-fe8" collectionClass="NSMutableArray" id="Sei-zL-OPR"/>
+                        <outletCollection property="soundButton" destination="T3E-pB-Vuj" collectionClass="NSMutableArray" id="jSV-V9-4vH"/>
+                        <outletCollection property="soundButton" destination="M4s-br-RfE" collectionClass="NSMutableArray" id="TUj-j2-m1s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

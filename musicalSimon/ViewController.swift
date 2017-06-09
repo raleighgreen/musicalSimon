@@ -97,7 +97,79 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
+    @IBAction func startGame(_ sender: Any) {
+    }
     
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
+        if currentItem <= playlist.count - 1 {
+            // play our next item
+            
+        } else {
+            readyForUser = true
+            // resetButtonHighlights
+            // enable buttons
+            
+        }
+        
+        
+    }
+    
+    func playNextItem () {
+        let selectedItem = playlist[currentItem]
+        
+        switch selectedItem {
+        case 1:
+            highlightButtonWithTag(tag: 1)
+            sound1Player.play()
+            break
+        case 2:
+            highlightButtonWithTag(tag: 2)
+            sound2Player.play()
+            break
+        case 3:
+            highlightButtonWithTag(tag: 3)
+            sound3Player.play()
+            break
+        case 4:
+            highlightButtonWithTag(tag: 4)
+            sound4Player.play()
+            break
+        default:
+            break
+        }
+        
+        currentItem += 1
+    }
+    
+    func highlightButtonWithTag (tag:Int) {
+        
+        switch tag {
+        case 1:
+            resetButtonHighlights()
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+        case 2:
+            resetButtonHighlights()
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+        case 3:
+            resetButtonHighlights()
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+        case 4:
+            resetButtonHighlights()
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+        default:
+            break
+        }
+        
+    }
+    
+    func resetButtonHighlights () {
+        soundButton[0].setImage(UIImage(named: "red"), forState: .Normal)
+        soundButton[1].setImage(UIImage(named: "yellow"), forState: .Normal)
+        soundButton[2].setImage(UIImage(named: "blue"), forState: .Normal)
+        soundButton[3].setImage(UIImage(named: "green"), forState: .Normal)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
