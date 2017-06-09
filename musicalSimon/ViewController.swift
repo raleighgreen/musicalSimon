@@ -76,39 +76,84 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func soundButtonPressed(_ sender: Any) {
         
-        let button = sender as! UIButton
-        
-        switch button.tag {
-        case 1:
-            sound1Player.play()
-            break
-        case 2:
-            sound2Player.play()
-            break
-        case 3:
-            sound3Player.play()
-            break
-        case 4:
-            sound4Player.play()
-            break
-        default:
-            break
+        if readyForUser {
+            let button = sender as! UIButton
+            
+            switch button.tag {
+            case 1:
+                sound1Player.play()
+                checkIfCorrect(buttonPressed: 1)
+                break
+            case 2:
+                sound2Player.play()
+                checkIfCorrect(buttonPressed: 2)
+                break
+            case 3:
+                sound3Player.play()
+                checkIfCorrect(buttonPressed: 3)
+                break
+            case 4:
+                sound4Player.play()
+                checkIfCorrect(buttonPressed: 4)
+                break
+            default:
+                break
+            }
+ 
         }
+        
         
     }
     
-    @IBAction func startGame(_ sender: Any) {
+    func checkIfCorrect (buttonPressed: Int) {
+        if buttonPressed == playlist[numberOfTaps] {
+            if numberOfTaps == playlist.count - 1 {
+                // next round
+            }
+        }
     }
+    
+    func nextRound () {
+    
+        level += 1
+        levelLabel.text = "Level \(level)"
+        
+        readyForUser = false
+        numberOfTaps = 0
+        currentItem = 0
+        
+        let randomNumber = Int(arc4random_uniform(4) + 1)
+        playlist.append(randomNumber)
+        
+        playNextItem()
+        
+        
+        // disable button
+    }
+    
+    
+    @IBAction func startGame(_ sender: Any) {
+        
+        levelLabel.text = "Level 1"
+        
+        let randomNumber = Int(arc4random_uniform(4) + 1)
+        playlist.append(randomNumber)
+        startGameButton.isHidden = true
+        playNextItem()
+        
+    }
+    
+    
     
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         
         if currentItem <= playlist.count - 1 {
-            // play our next item
+            playNextItem()
             
         } else {
             readyForUser = true
-            // resetButtonHighlights
+            resetButtonHighlights()
             // enable buttons
             
         }
