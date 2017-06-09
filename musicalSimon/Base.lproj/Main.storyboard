@@ -21,21 +21,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-3g-fe8">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-3g-fe8">
                                 <rect key="frame" x="19" y="165" width="165" height="165"/>
                                 <state key="normal" image="red"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EyC-tP-6aB"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHc-cZ-Ogc">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHc-cZ-Ogc">
                                 <rect key="frame" x="189" y="165" width="166" height="165"/>
                                 <state key="normal" image="yellow"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzw-iU-kL8"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-pB-Vuj">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-pB-Vuj">
                                 <rect key="frame" x="189" y="334" width="166" height="166"/>
                                 <state key="normal" image="blue"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fln-Lo-K7r"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-br-RfE">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-br-RfE">
                                 <rect key="frame" x="19" y="334" width="165" height="166"/>
                                 <state key="normal" image="green"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVK-cD-v25"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-h3-iWu">
                                 <rect key="frame" x="143" y="289" width="88" height="88"/>
