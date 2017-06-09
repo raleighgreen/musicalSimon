@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="musicalSimon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-3g-fe8">
+                                <rect key="frame" x="19" y="165" width="165" height="165"/>
+                                <state key="normal" image="red"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHc-cZ-Ogc">
+                                <rect key="frame" x="189" y="165" width="166" height="165"/>
+                                <state key="normal" image="yellow"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-pB-Vuj">
+                                <rect key="frame" x="189" y="334" width="166" height="166"/>
+                                <state key="normal" image="blue"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-br-RfE">
+                                <rect key="frame" x="19" y="334" width="165" height="166"/>
+                                <state key="normal" image="green"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-h3-iWu">
+                                <rect key="frame" x="143" y="289" width="88" height="88"/>
+                                <state key="normal" image="play"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT5-oO-1sb">
+                                <rect key="frame" x="155.5" y="69" width="64.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T3E-pB-Vuj" firstAttribute="top" secondItem="eaz-h3-iWu" secondAttribute="bottom" constant="-43" id="HSy-GD-oYS"/>
+                            <constraint firstItem="M4s-br-RfE" firstAttribute="top" secondItem="eaz-h3-iWu" secondAttribute="bottom" constant="-43" id="S0m-pY-TUP"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="top" secondItem="kHc-cZ-Ogc" secondAttribute="bottom" constant="-41" id="Uda-sE-c2u"/>
+                            <constraint firstItem="T3E-pB-Vuj" firstAttribute="leading" secondItem="eaz-h3-iWu" secondAttribute="trailing" constant="-42" id="X91-3t-Tam"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="leading" secondItem="Lk6-3g-fe8" secondAttribute="trailing" constant="-41" id="ZOu-Dz-JIK"/>
+                            <constraint firstItem="ZT5-oO-1sb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="biH-n1-Gk5"/>
+                            <constraint firstItem="kHc-cZ-Ogc" firstAttribute="leading" secondItem="eaz-h3-iWu" secondAttribute="trailing" constant="-42" id="hfB-P0-5cJ"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="izg-ZT-bIO"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oFW-xq-xDC"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="top" secondItem="Lk6-3g-fe8" secondAttribute="bottom" constant="-41" id="s0q-La-xag"/>
+                            <constraint firstItem="eaz-h3-iWu" firstAttribute="leading" secondItem="M4s-br-RfE" secondAttribute="trailing" constant="-41" id="sZU-2m-VHK"/>
+                            <constraint firstItem="ZT5-oO-1sb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="49" id="uar-BY-yjn"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue" width="166" height="166"/>
+        <image name="green" width="165" height="166"/>
+        <image name="play" width="88" height="88"/>
+        <image name="red" width="165" height="165"/>
+        <image name="yellow" width="166" height="165"/>
+    </resources>
 </document>
