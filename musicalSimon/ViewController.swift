@@ -148,16 +148,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         switch tag {
         case 1:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
         case 2:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
         case 3:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
         case 4:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), forState: .Normal)
+            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
         default:
             break
         }
@@ -165,10 +165,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func resetButtonHighlights () {
-        soundButton[0].setImage(UIImage(named: "red"), forState: .Normal)
-        soundButton[1].setImage(UIImage(named: "yellow"), forState: .Normal)
-        soundButton[2].setImage(UIImage(named: "blue"), forState: .Normal)
-        soundButton[3].setImage(UIImage(named: "green"), forState: .Normal)
+        soundButton[0].setImage(UIImage(named: "red"), for: [])
+        soundButton[1].setImage(UIImage(named: "yellow"), for: [])
+        soundButton[2].setImage(UIImage(named: "blue"), for: [])
+        soundButton[3].setImage(UIImage(named: "green"), for: [])
     }
     
     override func didReceiveMemoryWarning() {
