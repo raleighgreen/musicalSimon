@@ -105,12 +105,33 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    func checkIfCorrect (buttonPressed: Int) {
+    func checkIfCorrect (buttonPressed:Int) {
         if buttonPressed == playlist[numberOfTaps] {
             if numberOfTaps == playlist.count - 1 {
-                // next round
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.nextRound()
+                }
+                
+                return
             }
+            
+            numberOfTaps += 1
+        }else{ // GAME OVER
+            resetGame()
         }
+    }
+    
+    func resetGame() {
+        level = 1
+        readyForUser = false
+        numberOfTaps = 0
+        currentItem = 0
+        playlist = []
+        levelLabel.text = "Game Over"
+        startGameButton.isHidden = false
+        disableButtons()
+        
     }
     
     func nextRound () {
@@ -121,21 +142,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         readyForUser = false
         numberOfTaps = 0
         currentItem = 0
+        disableButtons()
         
         let randomNumber = Int(arc4random_uniform(4) + 1)
         playlist.append(randomNumber)
         
         playNextItem()
         
-        
-        // disable button
     }
     
     
     @IBAction func startGame(_ sender: Any) {
         
         levelLabel.text = "Level 1"
-        
+        disableButtons()
         let randomNumber = Int(arc4random_uniform(4) + 1)
         playlist.append(randomNumber)
         startGameButton.isHidden = true
@@ -154,7 +174,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             readyForUser = true
             resetButtonHighlights()
-            // enable buttons
+            enableButtons()
             
         }
         
@@ -196,13 +216,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
         case 2:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
+            soundButton[tag - 1].setImage(UIImage(named:"yellowPressed"), for: [])
         case 3:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
+            soundButton[tag - 1].setImage(UIImage(named:"bluePressed"), for: [])
         case 4:
             resetButtonHighlights()
-            soundButton[tag - 1].setImage(UIImage(named:"redPressed"), for: [])
+            soundButton[tag - 1].setImage(UIImage(named:"greenPressed"), for: [])
         default:
             break
         }
@@ -214,6 +234,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         soundButton[1].setImage(UIImage(named: "yellow"), for: [])
         soundButton[2].setImage(UIImage(named: "blue"), for: [])
         soundButton[3].setImage(UIImage(named: "green"), for: [])
+    }
+    
+    
+    func disableButtons () {
+        for button in soundButton {
+            button.isUserInteractionEnabled = false
+        }
+    }
+    
+    func enableButtons () {
+        for button in soundButton {
+            button.isUserInteractionEnabled = true
+        }
     }
     
     override func didReceiveMemoryWarning() {

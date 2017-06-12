@@ -82,10 +82,10 @@
                     <connections>
                         <outlet property="levelLabel" destination="ZT5-oO-1sb" id="GvG-7p-p3h"/>
                         <outlet property="startGameButton" destination="eaz-h3-iWu" id="MUh-sN-22H"/>
-                        <outletCollection property="soundButton" destination="kHc-cZ-Ogc" collectionClass="NSMutableArray" id="Xoj-z2-Su6"/>
-                        <outletCollection property="soundButton" destination="Lk6-3g-fe8" collectionClass="NSMutableArray" id="Sei-zL-OPR"/>
-                        <outletCollection property="soundButton" destination="T3E-pB-Vuj" collectionClass="NSMutableArray" id="jSV-V9-4vH"/>
-                        <outletCollection property="soundButton" destination="M4s-br-RfE" collectionClass="NSMutableArray" id="TUj-j2-m1s"/>
+                        <outletCollection property="soundButton" destination="Lk6-3g-fe8" collectionClass="NSMutableArray" id="nJ6-Ff-hxt"/>
+                        <outletCollection property="soundButton" destination="kHc-cZ-Ogc" collectionClass="NSMutableArray" id="pBG-ib-hHB"/>
+                        <outletCollection property="soundButton" destination="T3E-pB-Vuj" collectionClass="NSMutableArray" id="bJd-Zb-npg"/>
+                        <outletCollection property="soundButton" destination="M4s-br-RfE" collectionClass="NSMutableArray" id="XVA-G1-Vpn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
