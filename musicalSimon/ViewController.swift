@@ -11,7 +11,6 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
-    
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet var soundButton: [UIButton]!
     @IBOutlet weak var levelLabel: UILabel!
@@ -71,8 +70,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         sound3Player.numberOfLoops = 0
         sound4Player.numberOfLoops = 0
     }
-    
-    
     
     @IBAction func soundButtonPressed(_ sender: Any) {
         
@@ -151,7 +148,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    
     @IBAction func startGame(_ sender: Any) {
         
         levelLabel.text = "Level 1"
@@ -162,9 +158,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         playNextItem()
         
     }
-    
-    
-    
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         
@@ -236,7 +229,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         soundButton[3].setImage(UIImage(named: "green"), for: [])
     }
     
-    
     func disableButtons () {
         for button in soundButton {
             button.isUserInteractionEnabled = false
@@ -253,7 +245,5 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
