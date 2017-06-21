@@ -20,10 +20,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var sound3Player:AVAudioPlayer!
     var sound4Player:AVAudioPlayer!
     
+    var sound1 = Bundle.main.path(forResource: "1", ofType: "wav")!
+    var sound2 = Bundle.main.path(forResource: "2", ofType: "wav")!
+    var sound3 = Bundle.main.path(forResource: "3", ofType: "wav")!
+    var sound4 = Bundle.main.path(forResource: "4", ofType: "wav")!
+    
     var playlist = [Int]()
     var currentItem = 0
     var numberOfTaps = 0
     var readyForUser = false
+    
     
     var level = 1
     
@@ -39,16 +45,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     func setupAudioFiles() {
         
-        let soundFilePath = Bundle.main.path(forResource: "1", ofType: "wav")!
+        let soundFilePath = sound1
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
         
-        let soundFilePath2 = Bundle.main.path(forResource: "2", ofType: "wav")!
+        let soundFilePath2 = sound2
         let soundFileURL2 = NSURL(fileURLWithPath: soundFilePath2)
         
-        let soundFilePath3 = Bundle.main.path(forResource: "3", ofType: "wav")!
+        let soundFilePath3 = sound3
         let soundFileURL3 = NSURL(fileURLWithPath: soundFilePath3)
         
-        let soundFilePath4 = Bundle.main.path(forResource: "4", ofType: "wav")!
+        let soundFilePath4 = sound4
         let soundFileURL4 = NSURL(fileURLWithPath: soundFilePath4)
         
         do {
